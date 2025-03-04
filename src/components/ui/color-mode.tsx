@@ -53,7 +53,7 @@ export const ColorModeButton = React.forwardRef<
   HTMLButtonElement,
   ColorModeButtonProps
 >(function ColorModeButton(props, ref) {
-  const { toggleColorMode } = useColorMode();
+  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <ClientOnly fallback={<Skeleton boxSize="8" />}>
       {/* <IconButton
@@ -75,6 +75,7 @@ export const ColorModeButton = React.forwardRef<
       <Switch
         onChange={toggleColorMode}
         colorPalette="blue"
+        checked={colorMode === "dark"}
         size="lg"
         trackLabel={{
           on: (
