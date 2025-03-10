@@ -4,6 +4,7 @@ import GenreList from "./components/GenreList";
 import { Grid, GridItem } from "@chakra-ui/react";
 import { useState } from "react";
 import { Genre } from "./hooks/useGenres";
+import PlatformSelector from "./components/PlatformSelector";
 
 function App() {
   const [selectedGenre, getSelectedGenre] = useState<Genre | null>(null);
@@ -32,6 +33,7 @@ function App() {
         />
       </GridItem>
       <GridItem area="main">
+        <PlatformSelector />
         <GameGrid selectedGenre={selectedGenre} />
       </GridItem>
     </Grid>
